@@ -54,15 +54,11 @@ function showResult(score, playerChoice, computerChoice) {
 
 
 function onClickRPS(playerChoice) {
-    console.log({playerChoice});
     const computerChoice = getComputerChoice();
-    console.log({computerChoice});
     const score = getResult(playerChoice,computerChoice).score;
     const computerScore = getResult(playerChoice, computerChoice).compScore;
     totalScore["playerScore"] += score;
     totalScore["computerScore"] += computerScore;
-    console.log({score});
-    console.log({computerScore});
     console.log({totalScore});
     showResult(score, playerChoice, computerChoice);
 }
@@ -79,6 +75,7 @@ function playGame() {
     const endGameButton = document.getElementById("endGameButton");
     endGameButton.onclick = () => endGame(totalScore);
 }
+
 
 function endGame(totalScore) {
   totalScore["playerScore"] = 0;
